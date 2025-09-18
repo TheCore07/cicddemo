@@ -1,0 +1,19 @@
+ID: cicddemo
+_schema-version: '3.1'
+version: 1.0.0
+description: "SAPUI5 CI/CD Demo Application"
+
+modules:
+  - name: cicddemo-ui
+    type: html5
+    path: webapp
+    build-parameters:
+      builder: custom
+      commands:
+        - npm install
+        - npm run build || echo "No build step, continue"
+    parameters:
+      memory: 256M
+      disk-quota: 256M
+
+resources: []

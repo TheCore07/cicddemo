@@ -1,0 +1,17 @@
+version: "1.0"
+stages:
+  Build:
+    steps:
+      buildMta:
+        mtaBuildTool: "cloudMta"
+  Test:
+    steps:
+      npmExecuteScripts:
+        runScripts: ["test"]
+  Deploy:
+    steps:
+      cloudFoundryDeploy:
+        cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
+        org: "sympacon_TS GmbH_ppwsc9pgw-97hlxx"
+        space: "dev"
+        appName: "cicddemo"
