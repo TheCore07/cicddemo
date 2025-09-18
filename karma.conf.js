@@ -6,7 +6,16 @@ module.exports = function(config) {
       "webapp/test/unit/AllTests.js",
       "webapp/test/integration/AllJourneys.js"
     ],
-    browsers: ["ChromeHeadless"],
+
+    browsers: ["ChromeHeadlessNoSandbox"],
+
+    customLaunchers: {
+      ChromeHeadlessNoSandbox: {
+        base: "ChromeHeadless",
+        flags: ["--no-sandbox", "--disable-gpu"]
+      }
+    },
+
     singleRun: true
   });
 };
