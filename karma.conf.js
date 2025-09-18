@@ -1,8 +1,12 @@
 module.exports = function(config) {
   config.set({
     frameworks: ["qunit"],
+
     files: [
-      { pattern: "webapp/**/*", included: false, served: true },
+      // Serve source files, but don't include them in the browser directly
+      { pattern: "webapp/**/*.js", included: false, served: true },
+
+      // Explicitly include your test files
       "webapp/test/unit/AllTests.js",
       "webapp/test/integration/AllJourneys.js"
     ],
