@@ -11,7 +11,7 @@ modules:
       builder: custom
       commands:
         - npm install
-        - npm run build || echo "No build step, continue"
+        - npm run build 
     parameters:
       memory: 256M
       disk-quota: 256M
